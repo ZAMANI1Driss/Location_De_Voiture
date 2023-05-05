@@ -17,7 +17,7 @@ def connect_database():
         messagebox.showerror('Error','Please Agree To The Terms & Conditions')
     else:
         try:
-            con=pymysql.connect(host='localhost',user='root',password='driss321')
+            con=pymysql.connect(host='localhost',user='root',password='driss123')
             mycursor=con.cursor()
         except:
             messagebox.showerror('Error','Database Connection Error,Try in few minutes')
@@ -27,19 +27,19 @@ def connect_database():
             mycursor.execute(query)
             query='use Location'
             mycursor.execute(query)
-            query='create table Clients(id int auto_increment primary key not null,email varchar(50),username varchar(40),password varchar(32))'
+            query='create table utilisateur(id int auto_increment primary key not null,email varchar(50),username varchar(40),password varchar(32))'
             mycursor.execute(query)
         except:
             mycursor.execute('use Location')
 
-        query='select * from Clients where username=%s'
+        query='select * from utilisateur where username=%s'
         mycursor.execute(query,(usernameEntry.get()))
 
         row=mycursor.fetchone()
         if row != None:
             messagebox.showerror('Error','Username Already Exists')
         else:
-            query='insert into Clients(email,username,password) values(%s,%s,%s)'
+            query='insert into utilisateur(email,username,password) values(%s,%s,%s)'
             mycursor.execute(query,(emailEntry.get(),usernameEntry.get(),passwordEntry.get()))
             con.commit()
             con.close()
