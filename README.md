@@ -56,6 +56,16 @@ avoir les fonctionalités adequates au utilisateur en effectuant les tâches sui
       *	NB:host = localhost, username = root, password = driss123.   *
       *		 						     *
       *	**************************************************************
+      ****************************************************************
+      *								     *
+      *	NB:les fichiers source code sont nommés:		     *
+      *								     *
+      *		-main.py					     *
+      *		-signin.py					     *
+      *		-signup.py					     *
+      *	   							     *
+      *		 						     *
+      *	**************************************************************
 
 
 ## Conception des classes et objets pour gérer les produits et les utilisateurs :
