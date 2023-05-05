@@ -19,15 +19,14 @@ def login_user():
             return
         query='use Location'
         mycursor.execute(query)
-        query='select * from Clients where username=%s and password=%s'
+        query='select * from utilisateur where username=%s and password=%s'
         mycursor.execute(query,(usernameEntry.get(),passwordEntry.get()))
         row=mycursor.fetchone()
         if row==None:
             messagebox.showerror('Error','Invalid Username Or Password')
         else:
             messagebox.showinfo('Succes ','Welcome!')
-        window.destroy()
-        import main
+            import main
 
 
 def signup_page():
